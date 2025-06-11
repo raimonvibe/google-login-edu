@@ -5,6 +5,19 @@ import './App.css'
 function App() {
   const [activeStep, setActiveStep] = useState(0)
   const [showDemo, setShowDemo] = useState(false)
+  const [copySuccess, setCopySuccess] = useState<string | null>(null)
+
+  const copyToClipboard = async (text: string, buttonId: string) => {
+    try {
+      await navigator.clipboard.writeText(text)
+      setCopySuccess(buttonId)
+      setTimeout(() => setCopySuccess(null), 2000)
+    } catch (err) {
+      console.error('Failed to copy text: ', err)
+      setCopySuccess(`error-${buttonId}`)
+      setTimeout(() => setCopySuccess(null), 2000)
+    }
+  }
 
   const steps = [
     {
@@ -406,8 +419,12 @@ function clearUserSession() {
                       <Code className="w-5 h-5 text-blue-400" />
                       <span className="text-white font-medium">Code Example</span>
                     </div>
-                    <button className="text-purple-400 hover:text-purple-300 text-sm">
-                      Copy Code
+                    <button 
+                      onClick={() => copyToClipboard(steps[activeStep].code, 'step-code')}
+                      className="text-purple-400 hover:text-purple-300 text-sm transition-colors"
+                    >
+                      {copySuccess === 'step-code' ? '✓ Copied!' : 
+                       copySuccess === 'error-step-code' ? '✗ Failed' : 'Copy Code'}
                     </button>
                   </div>
                   <pre className="text-green-400 text-sm overflow-x-auto">
@@ -445,8 +462,12 @@ function clearUserSession() {
                       <Code className="w-5 h-5 text-blue-400" />
                       <span className="text-white font-medium">Full HTML Example</span>
                     </div>
-                    <button className="text-purple-400 hover:text-purple-300 text-sm">
-                      Copy Code
+                    <button 
+                      onClick={() => copyToClipboard(demoCode, 'demo-code')}
+                      className="text-purple-400 hover:text-purple-300 text-sm transition-colors"
+                    >
+                      {copySuccess === 'demo-code' ? '✓ Copied!' : 
+                       copySuccess === 'error-demo-code' ? '✗ Failed' : 'Copy Code'}
                     </button>
                   </div>
                   <pre className="text-green-400 text-sm overflow-x-auto max-h-96 overflow-y-auto">
