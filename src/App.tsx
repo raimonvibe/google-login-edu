@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Code, Play, CheckCircle, ExternalLink, Globe, Settings, Eye, Key, Shield, Monitor } from 'lucide-react'
 import './App.css'
 
@@ -19,6 +19,7 @@ function App() {
         "Click 'CREATE' and wait for project creation"
       ],
       code: `// Step 1: Access Google Cloud Console
+https://console.cloud.google.com`,
       completed: false
     },
     {
@@ -31,7 +32,7 @@ function App() {
         "Click on the API and press 'ENABLE'",
         "Wait for the API to be enabled (may take a few minutes)"
       ],
-      code: `// Required API: Google Identity Services API
+      code: `// Required API: Google Identity Services API`,
       completed: false
     },
     {
@@ -48,7 +49,7 @@ function App() {
         "Click 'CREATE' and copy your Client ID"
       ],
       code: `// Your OAuth 2.0 Client ID will look like:
-//
+// 123456789-abcdefghijklmnop.apps.googleusercontent.com`,
       completed: false
     },
     {
@@ -63,8 +64,7 @@ function App() {
         "Add test users if app is in testing mode",
         "Save and continue through all steps"
       ],
-      code: `// Required OAuth scopes for basic login:
-//
+      code: `// Required OAuth scopes for basic login:`,
       completed: false
     },
     {
