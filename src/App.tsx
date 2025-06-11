@@ -318,59 +318,59 @@ function clearUserSession() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900">
       <header className="bg-black/20 backdrop-blur-sm border-b border-purple-500/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between space-y-4 sm:space-y-0">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                <Globe className="w-6 h-6 text-white" />
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                <Globe className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-white">Google Login Tutorial</h1>
-                <p className="text-purple-300">Complete guide to implementing Google OAuth with JavaScript</p>
+                <h1 className="text-xl sm:text-2xl font-bold text-white">Google Login Tutorial</h1>
+                <p className="text-sm sm:text-base text-purple-300">Complete guide to implementing Google OAuth with JavaScript</p>
               </div>
             </div>
-            <div className="flex space-x-4">
+            <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 w-full sm:w-auto">
               <a href="https://developers.google.com/identity/gsi/web" target="_blank" rel="noopener noreferrer" 
-                 className="flex items-center space-x-2 text-purple-300 hover:text-white transition-colors">
+                 className="flex items-center justify-center sm:justify-start space-x-2 text-purple-300 hover:text-white transition-colors py-2 px-3 rounded-lg hover:bg-white/10">
                 <ExternalLink className="w-4 h-4" />
-                <span>Official Docs</span>
+                <span className="text-sm">Official Docs</span>
               </a>
               <a href="https://console.cloud.google.com" target="_blank" rel="noopener noreferrer"
-                 className="flex items-center space-x-2 text-purple-300 hover:text-white transition-colors">
+                 className="flex items-center justify-center sm:justify-start space-x-2 text-purple-300 hover:text-white transition-colors py-2 px-3 rounded-lg hover:bg-white/10">
                 <Settings className="w-4 h-4" />
-                <span>Google Console</span>
+                <span className="text-sm">Google Console</span>
               </a>
             </div>
           </div>
         </div>
       </header>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-1">
-            <div className="bg-black/30 backdrop-blur-sm rounded-xl border border-purple-500/20 p-6 sticky top-8">
-              <h2 className="text-xl font-semibold text-white mb-6 flex items-center">
-                <CheckCircle className="w-5 h-5 mr-2 text-green-400" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div className="lg:col-span-1 order-2 lg:order-1">
+            <div className="bg-black/30 backdrop-blur-sm rounded-xl border border-purple-500/20 p-4 sm:p-6 lg:sticky lg:top-8">
+              <h2 className="text-lg sm:text-xl font-semibold text-white mb-4 sm:mb-6 flex items-center">
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-green-400" />
                 Tutorial Steps
               </h2>
-              <nav className="space-y-3">
+              <nav className="space-y-2 sm:space-y-3">
                 {steps.map((step, index) => (
                   <button
                     key={index}
                     onClick={() => setActiveStep(index)}
-                    className={`w-full text-left p-3 rounded-lg transition-all ${
+                    className={`w-full text-left p-3 sm:p-3 rounded-lg transition-all text-sm sm:text-base ${
                       activeStep === index
                         ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white'
                         : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50'
                     }`}
                   >
                     <div className="flex items-center">
-                      <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mr-3 ${
+                      <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mr-3 flex-shrink-0 ${
                         activeStep === index ? 'bg-white text-purple-600' : 'bg-gray-600 text-white'
                       }`}>
                         {index + 1}
                       </span>
-                      <span className="font-medium text-sm">{step.title}</span>
+                      <span className="font-medium">{step.title}</span>
                     </div>
                   </button>
                 ))}
@@ -378,7 +378,7 @@ function clearUserSession() {
               
               <button
                 onClick={() => setShowDemo(!showDemo)}
-                className="w-full mt-6 bg-gradient-to-r from-green-600 to-emerald-600 text-white py-3 px-4 rounded-lg font-medium hover:from-green-700 hover:to-emerald-700 transition-all flex items-center justify-center"
+                className="w-full mt-4 sm:mt-6 bg-gradient-to-r from-green-600 to-emerald-600 text-white py-3 px-4 rounded-lg font-medium hover:from-green-700 hover:to-emerald-700 transition-all flex items-center justify-center text-sm sm:text-base"
               >
                 <Play className="w-4 h-4 mr-2" />
                 {showDemo ? 'Hide Demo' : 'Show Complete Demo'}
@@ -386,22 +386,22 @@ function clearUserSession() {
             </div>
           </div>
 
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 order-1 lg:order-2">
             {!showDemo ? (
-              <div className="bg-black/30 backdrop-blur-sm rounded-xl border border-purple-500/20 p-8">
-                <div className="mb-6">
-                  <h2 className="text-2xl font-bold text-white mb-2">
+              <div className="bg-black/30 backdrop-blur-sm rounded-xl border border-purple-500/20 p-4 sm:p-6 lg:p-8">
+                <div className="mb-4 sm:mb-6">
+                  <h2 className="text-xl sm:text-2xl font-bold text-white mb-2">
                     Step {activeStep + 1}: {steps[activeStep].title}
                   </h2>
-                  <p className="text-purple-300 text-lg">{steps[activeStep].description}</p>
+                  <p className="text-purple-300 text-base sm:text-lg">{steps[activeStep].description}</p>
                 </div>
 
-                <div className="mb-6 p-6 bg-gradient-to-r from-blue-900/20 to-purple-900/20 rounded-lg border border-blue-500/20">
-                  <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
-                    <Eye className="w-5 h-5 mr-2 text-blue-400" />
+                <div className="mb-4 sm:mb-6 p-4 sm:p-6 bg-gradient-to-r from-blue-900/20 to-purple-900/20 rounded-lg border border-blue-500/20">
+                  <h3 className="text-base sm:text-lg font-semibold text-white mb-3 sm:mb-4 flex items-center">
+                    <Eye className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-blue-400" />
                     Step-by-Step Instructions
                   </h3>
-                  <ol className="text-purple-200 space-y-2">
+                  <ol className="text-purple-200 space-y-2 text-sm sm:text-base">
                     {steps[activeStep].detailedSteps.map((step, index) => (
                       <li key={index} className="flex items-start">
                         <span className="bg-blue-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
@@ -413,75 +413,75 @@ function clearUserSession() {
                   </ol>
                 </div>
 
-                <div className="bg-gray-900/80 rounded-lg p-6 border border-gray-700">
-                  <div className="flex items-center justify-between mb-4">
+                <div className="bg-gray-900/80 rounded-lg p-4 sm:p-6 border border-gray-700">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 space-y-2 sm:space-y-0">
                     <div className="flex items-center space-x-2">
-                      <Code className="w-5 h-5 text-blue-400" />
-                      <span className="text-white font-medium">Code Example</span>
+                      <Code className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
+                      <span className="text-white font-medium text-sm sm:text-base">Code Example</span>
                     </div>
                     <button 
                       onClick={() => copyToClipboard(steps[activeStep].code, 'step-code')}
-                      className="text-purple-400 hover:text-purple-300 text-sm transition-colors"
+                      className="text-purple-400 hover:text-purple-300 text-sm transition-colors py-2 px-3 rounded-lg hover:bg-purple-500/20 self-start sm:self-auto"
                     >
                       {copySuccess === 'step-code' ? '✓ Copied!' : 
                        copySuccess === 'error-step-code' ? '✗ Failed' : 'Copy Code'}
                     </button>
                   </div>
-                  <pre className="text-green-400 text-sm overflow-x-auto">
+                  <pre className="text-green-400 text-xs sm:text-sm overflow-x-auto bg-gray-800/50 p-3 rounded-lg">
                     <code>{steps[activeStep].code}</code>
                   </pre>
                 </div>
 
-                <div className="mt-8 flex justify-between">
+                <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-between space-y-3 sm:space-y-0 sm:space-x-4">
                   <button
                     onClick={() => setActiveStep(Math.max(0, activeStep - 1))}
                     disabled={activeStep === 0}
-                    className="px-6 py-2 bg-gray-700 text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-600 transition-colors"
+                    className="w-full sm:w-auto px-6 py-3 bg-gray-700 text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-600 transition-colors text-sm sm:text-base font-medium"
                   >
                     Previous
                   </button>
                   <button
                     onClick={() => setActiveStep(Math.min(steps.length - 1, activeStep + 1))}
                     disabled={activeStep === steps.length - 1}
-                    className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:from-blue-700 hover:to-purple-700 transition-all"
+                    className="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:from-blue-700 hover:to-purple-700 transition-all text-sm sm:text-base font-medium"
                   >
                     Next
                   </button>
                 </div>
               </div>
             ) : (
-              <div className="bg-black/30 backdrop-blur-sm rounded-xl border border-purple-500/20 p-8">
-                <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
-                  <Play className="w-6 h-6 mr-2 text-green-400" />
+              <div className="bg-black/30 backdrop-blur-sm rounded-xl border border-purple-500/20 p-4 sm:p-6 lg:p-8">
+                <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 flex items-center">
+                  <Play className="w-5 h-5 sm:w-6 sm:h-6 mr-2 text-green-400" />
                   Complete Working Example
                 </h2>
                 
-                <div className="bg-gray-900/80 rounded-lg p-6 border border-gray-700">
-                  <div className="flex items-center justify-between mb-4">
+                <div className="bg-gray-900/80 rounded-lg p-4 sm:p-6 border border-gray-700">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 space-y-2 sm:space-y-0">
                     <div className="flex items-center space-x-2">
-                      <Code className="w-5 h-5 text-blue-400" />
-                      <span className="text-white font-medium">Full HTML Example</span>
+                      <Code className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
+                      <span className="text-white font-medium text-sm sm:text-base">Full HTML Example</span>
                     </div>
                     <button 
                       onClick={() => copyToClipboard(demoCode, 'demo-code')}
-                      className="text-purple-400 hover:text-purple-300 text-sm transition-colors"
+                      className="text-purple-400 hover:text-purple-300 text-sm transition-colors py-2 px-3 rounded-lg hover:bg-purple-500/20 self-start sm:self-auto"
                     >
                       {copySuccess === 'demo-code' ? '✓ Copied!' : 
                        copySuccess === 'error-demo-code' ? '✗ Failed' : 'Copy Code'}
                     </button>
                   </div>
-                  <pre className="text-green-400 text-sm overflow-x-auto max-h-96 overflow-y-auto">
+                  <pre className="text-green-400 text-xs sm:text-sm overflow-x-auto overflow-y-auto max-h-80 sm:max-h-96 bg-gray-800/50 p-3 rounded-lg">
                     <code>{demoCode}</code>
                   </pre>
                 </div>
 
-                <div className="mt-6 p-6 bg-gradient-to-r from-blue-900/30 to-purple-900/30 rounded-lg border border-blue-500/20">
-                  <h3 className="text-lg font-semibold text-white mb-3 flex items-center">
-                    <Key className="w-5 h-5 mr-2 text-yellow-400" />
+                <div className="mt-4 sm:mt-6 p-4 sm:p-6 bg-gradient-to-r from-blue-900/30 to-purple-900/30 rounded-lg border border-blue-500/20">
+                  <h3 className="text-base sm:text-lg font-semibold text-white mb-3 flex items-center">
+                    <Key className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-yellow-400" />
                     🚀 Quick Start Guide
                   </h3>
-                  <ol className="text-purple-200 space-y-2">
-                    <li>1. Replace <code className="bg-gray-800 px-2 py-1 rounded text-yellow-300">YOUR_CLIENT_ID</code> with your actual Google OAuth client ID</li>
+                  <ol className="text-purple-200 space-y-2 text-sm sm:text-base">
+                    <li>1. Replace <code className="bg-gray-800 px-2 py-1 rounded text-yellow-300 text-xs sm:text-sm">YOUR_CLIENT_ID</code> with your actual Google OAuth client ID</li>
                     <li>2. Save the code as an HTML file</li>
                     <li>3. Serve it from a web server (not file:// protocol)</li>
                     <li>4. Test the Google Sign-In functionality</li>
@@ -492,97 +492,97 @@ function clearUserSession() {
           </div>
         </div>
 
-        <div className="mt-16 grid md:grid-cols-4 gap-6">
-          <div className="bg-black/30 backdrop-blur-sm rounded-xl border border-purple-500/20 p-6">
-            <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mb-4">
-              <Settings className="w-6 h-6 text-white" />
+        <div className="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div className="bg-black/30 backdrop-blur-sm rounded-xl border border-purple-500/20 p-4 sm:p-6">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mb-3 sm:mb-4">
+              <Settings className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
             </div>
-            <h3 className="text-lg font-semibold text-white mb-2">Console Setup</h3>
+            <h3 className="text-base sm:text-lg font-semibold text-white mb-2">Console Setup</h3>
             <p className="text-purple-300 text-sm">Detailed Google Cloud Console navigation with screenshots and step-by-step instructions.</p>
           </div>
           
-          <div className="bg-black/30 backdrop-blur-sm rounded-xl border border-purple-500/20 p-6">
-            <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4">
-              <Code className="w-6 h-6 text-white" />
+          <div className="bg-black/30 backdrop-blur-sm rounded-xl border border-purple-500/20 p-4 sm:p-6">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-3 sm:mb-4">
+              <Code className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
             </div>
-            <h3 className="text-lg font-semibold text-white mb-2">Modern Code</h3>
+            <h3 className="text-base sm:text-lg font-semibold text-white mb-2">Modern Code</h3>
             <p className="text-purple-300 text-sm">Updated examples using Google Identity Services API with JWT tokens.</p>
           </div>
           
-          <div className="bg-black/30 backdrop-blur-sm rounded-xl border border-purple-500/20 p-6">
-            <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mb-4">
-              <Shield className="w-6 h-6 text-white" />
+          <div className="bg-black/30 backdrop-blur-sm rounded-xl border border-purple-500/20 p-4 sm:p-6">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mb-3 sm:mb-4">
+              <Shield className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
             </div>
-            <h3 className="text-lg font-semibold text-white mb-2">Security Best Practices</h3>
+            <h3 className="text-base sm:text-lg font-semibold text-white mb-2">Security Best Practices</h3>
             <p className="text-purple-300 text-sm">Learn proper token verification and security considerations.</p>
           </div>
 
-          <div className="bg-black/30 backdrop-blur-sm rounded-xl border border-purple-500/20 p-6">
-            <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center mb-4">
-              <Monitor className="w-6 h-6 text-white" />
+          <div className="bg-black/30 backdrop-blur-sm rounded-xl border border-purple-500/20 p-4 sm:p-6">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center mb-3 sm:mb-4">
+              <Monitor className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
             </div>
-            <h3 className="text-lg font-semibold text-white mb-2">Live Demo</h3>
+            <h3 className="text-base sm:text-lg font-semibold text-white mb-2">Live Demo</h3>
             <p className="text-purple-300 text-sm">Complete working example you can test and modify for your projects.</p>
           </div>
         </div>
 
-        <footer className="mt-16 bg-black/30 backdrop-blur-sm rounded-xl border border-purple-500/20 p-8">
+        <footer className="mt-12 sm:mt-16 bg-black/30 backdrop-blur-sm rounded-xl border border-purple-500/20 p-6 sm:p-8">
           <div className="text-center">
-            <h3 className="text-xl font-semibold text-white mb-6">Connect with Raimon</h3>
-            <ul className="flex flex-wrap justify-center gap-4 icons social-grid">
+            <h3 className="text-lg sm:text-xl font-semibold text-white mb-4 sm:mb-6">Connect with Raimon</h3>
+            <ul className="flex flex-wrap justify-center gap-3 sm:gap-4 icons social-grid">
               <li>
                 <a href="https://x.com/raimonvibe/" target="_blank" rel="noopener noreferrer" 
-                   className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-white hover:from-blue-600 hover:to-purple-700 transition-all duration-300 hover:scale-110">
-                  <i className="fab fa-x-twitter text-lg"></i>
+                   className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-white hover:from-blue-600 hover:to-purple-700 transition-all duration-300 hover:scale-110">
+                  <i className="fab fa-x-twitter text-base sm:text-lg"></i>
                   <span className="sr-only">X</span>
                 </a>
               </li>
               <li>
                 <a href="https://www.youtube.com/channel/UCDGDNuYb2b2Ets9CYCNVbuA/videos/" target="_blank" rel="noopener noreferrer"
-                   className="w-12 h-12 bg-gradient-to-r from-red-500 to-red-600 rounded-lg flex items-center justify-center text-white hover:from-red-600 hover:to-red-700 transition-all duration-300 hover:scale-110">
-                  <i className="fab fa-youtube text-lg"></i>
+                   className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-red-500 to-red-600 rounded-lg flex items-center justify-center text-white hover:from-red-600 hover:to-red-700 transition-all duration-300 hover:scale-110">
+                  <i className="fab fa-youtube text-base sm:text-lg"></i>
                   <span className="sr-only">YouTube</span>
                 </a>
               </li>
               <li>
                 <a href="https://www.tiktok.com/@raimonvibe/" target="_blank" rel="noopener noreferrer"
-                   className="w-12 h-12 bg-gradient-to-r from-gray-800 to-black rounded-lg flex items-center justify-center text-white hover:from-gray-700 hover:to-gray-900 transition-all duration-300 hover:scale-110">
-                  <i className="fab fa-tiktok text-lg"></i>
+                   className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-gray-800 to-black rounded-lg flex items-center justify-center text-white hover:from-gray-700 hover:to-gray-900 transition-all duration-300 hover:scale-110">
+                  <i className="fab fa-tiktok text-base sm:text-lg"></i>
                   <span className="sr-only">TikTok</span>
                 </a>
               </li>
               <li>
                 <a href="https://www.instagram.com/raimonvibe/" target="_blank" rel="noopener noreferrer"
-                   className="w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-600 rounded-lg flex items-center justify-center text-white hover:from-pink-600 hover:to-purple-700 transition-all duration-300 hover:scale-110">
-                  <i className="fab fa-instagram text-lg"></i>
+                   className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-pink-500 to-purple-600 rounded-lg flex items-center justify-center text-white hover:from-pink-600 hover:to-purple-700 transition-all duration-300 hover:scale-110">
+                  <i className="fab fa-instagram text-base sm:text-lg"></i>
                   <span className="sr-only">Instagram</span>
                 </a>
               </li>
               <li>
                 <a href="https://medium.com/@raimonvibe/" target="_blank" rel="noopener noreferrer"
-                   className="w-12 h-12 bg-gradient-to-r from-gray-700 to-gray-800 rounded-lg flex items-center justify-center text-white hover:from-gray-600 hover:to-gray-700 transition-all duration-300 hover:scale-110">
-                  <i className="fab fa-medium text-lg"></i>
+                   className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-gray-700 to-gray-800 rounded-lg flex items-center justify-center text-white hover:from-gray-600 hover:to-gray-700 transition-all duration-300 hover:scale-110">
+                  <i className="fab fa-medium text-base sm:text-lg"></i>
                   <span className="sr-only">Medium</span>
                 </a>
               </li>
               <li>
                 <a href="https://github.com/raimonvibe/" target="_blank" rel="noopener noreferrer"
-                   className="w-12 h-12 bg-gradient-to-r from-gray-600 to-gray-700 rounded-lg flex items-center justify-center text-white hover:from-gray-500 hover:to-gray-600 transition-all duration-300 hover:scale-110">
-                  <i className="fab fa-github text-lg"></i>
+                   className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-gray-600 to-gray-700 rounded-lg flex items-center justify-center text-white hover:from-gray-500 hover:to-gray-600 transition-all duration-300 hover:scale-110">
+                  <i className="fab fa-github text-base sm:text-lg"></i>
                   <span className="sr-only">GitHub</span>
                 </a>
               </li>
               <li>
                 <a href="https://www.linkedin.com/in/raimonvibe/" target="_blank" rel="noopener noreferrer"
-                   className="w-12 h-12 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg flex items-center justify-center text-white hover:from-blue-700 hover:to-blue-800 transition-all duration-300 hover:scale-110">
-                  <i className="fab fa-linkedin-in text-lg"></i>
+                   className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg flex items-center justify-center text-white hover:from-blue-700 hover:to-blue-800 transition-all duration-300 hover:scale-110">
+                  <i className="fab fa-linkedin-in text-base sm:text-lg"></i>
                   <span className="sr-only">LinkedIn</span>
                 </a>
               </li>
               <li>
                 <a href="https://www.facebook.com/profile.php?id=61563450007849" target="_blank" rel="noopener noreferrer"
-                   className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center text-white hover:from-blue-600 hover:to-blue-700 transition-all duration-300 hover:scale-110">
-                  <i className="fab fa-facebook-f text-lg"></i>
+                   className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center text-white hover:from-blue-600 hover:to-blue-700 transition-all duration-300 hover:scale-110">
+                  <i className="fab fa-facebook-f text-base sm:text-lg"></i>
                   <span className="sr-only">Facebook</span>
                 </a>
               </li>
