@@ -407,7 +407,9 @@ function clearUserSession() {
                         <span className="bg-blue-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
                           {index + 1}
                         </span>
-                        <span>{step}</span>
+                        {/* min-w-0 + overflow-wrap: a URL longer than the line breaks instead of
+                            running out of the box on the right (iPhone, larger text sizes). */}
+                        <span className="min-w-0 [overflow-wrap:anywhere]">{step}</span>
                       </li>
                     ))}
                   </ol>
