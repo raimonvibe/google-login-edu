@@ -1,6 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Safety net for phones: a word or URL wider than its box wraps instead of
+   overflowing it. Only kicks in when a word does not fit on a line at all. */
+@layer base {
+  body {
+    overflow-wrap: break-word;
+  }
+}
 @layer base {
   :root {
     --radius: 0.5rem
